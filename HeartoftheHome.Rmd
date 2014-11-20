@@ -1,0 +1,7 @@
+---
+title: 'Heart of the Home: Transformations of the American Hearth'
+author: "Allison O'Connor"
+date: "November 19, 2014"
+output: html_document
+---
+
