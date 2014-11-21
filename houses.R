@@ -20,5 +20,6 @@ FFX_res_data <-
   group_by(decade, has_fp) %>%
 #this counts the data
   summarize(n = n()) %>%
+#this creates a bar graph from the data  
   ggplot(aes(x = decade, y = n, fill = has_fp)) + geom_bar(stat="identity", position="dodge")
 
