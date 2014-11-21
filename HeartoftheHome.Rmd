@@ -5,3 +5,8 @@ date: "November 19, 2014"
 output: html_document
 ---
 
+Fireplaces are the proverbial heart of the home. Even with the development of alternate modes of cooking, heating, and lighting--three of the most critical functions of fireplaces in early America--fireplaces persist in the building of American homes. What changes happened as functions of the fireplace were replaced by other technologies, but fireplaces persisted? This study will examine natinal data from census records, where since 1940 the census bureau has asked questions about central heating, as well as local data from Fairfax County, Virginia tax records, which indicate the number of fireplaces present in homes today, where those homes were built between 1722 and 2014.
+
+```{r}
+source("houses.R")
+```
