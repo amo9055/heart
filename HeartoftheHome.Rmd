@@ -5,8 +5,19 @@ date: "November 19, 2014"
 output: html_document
 ---
 
-Fireplaces are the proverbial heart of the home. Even with the development of alternate modes of cooking, heating, and lighting--three of the most critical functions of fireplaces in early America--fireplaces persist in the building of American homes. What changes happened as functions of the fireplace were replaced by other technologies, but fireplaces persisted? This study will examine natinal data from census records, where since 1940 the census bureau has asked questions about central heating, as well as local data from Fairfax County, Virginia tax records, which indicate the number of fireplaces present in homes today, where those homes were built between 1722 and 2014.
+Fireplaces are the proverbial heart of the home. Even with the development of alternate modes of cooking, heating, and lighting--three of the most critical functions of fireplaces in early America--fireplaces persist in the building of American homes. What changes happened as functions of the fireplace were replaced by other technologies, but fireplaces persisted? This study will examine natinal data from census records, where since 1940 the census bureau has asked questions about central heating, as well as local data from Fairfax County, Virginia tax records, which indicate the number of fireplaces present in homes today, where those homes were built between 1722 and 2014.^[Note that the tax data counts fireplaces in this manner: "**Fireplace Count:** 
+The number of fireplaces in a house, including the basement. A fireplace with a single firebox which has openings in two different rooms is counted as one fireplace. A gas fireplace with the interior appearance of a wood-burning fireplace (a brick or marble hearth and brick, marble, or wood front, for example) is counted as one fireplace. Free-standing wood-burning stoves are not counted." (http://icare.fairfaxcounty.gov/Forms/HtmlFrame.aspx?mode=Home/desc.htm) ]
 
-```{r}
+Between 1700 and 1899, very few houses in Fairfax County were built with no fireplace.
+
+```{r echo = FALSE, message = FALSE}
 source("houses.R")
+ggplot(data = FFX_res_data_sum,
+  aes(x = decade, y = n, fill = has_fp)) + 
+  geom_bar(stat="identity", position="dodge") +
+  xlim(1700, 1899) +
+  ylim (0, 16)
+
+
 ```
+
