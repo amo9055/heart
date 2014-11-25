@@ -1,12 +1,17 @@
 load("../FFXData/FFXDAta.RData")
+library(tidyr)
 library(dplyr)
-library(ggplot2)
+
 # FFX_res_data %>%
 # select(decade, fireplaces) %>%
 #this function determines if a house has a fireplace or not.
 has_fireplace <- function(n) {
   ifelse(n == 0, FALSE, TRUE)
 }
+#This creates a new column in the data frame giving true/false value
+FFX_res_data_fp <- FFX_res_data %>%
+  mutate(has_fireplace = has_fireplace(fireplaces))
+
 FFX_res_data_sum <- FFX_res_data %>%
   
   #this adds a column which indicates if a fireplace is present (TRUE) or not (FALSE)
