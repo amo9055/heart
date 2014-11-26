@@ -13,10 +13,13 @@ FFX_houses_built_per_decade <- FFX_res_data %>%
   summarize(houses_built = n())
 
 #join two tables together
-FFX_number_fp_per_house %>%
+FFX_number_fp_per_house <- FFX_number_fp_per_house %>%
   left_join(FFX_houses_built_per_decade, by = "decade")
 
-
+#calculate percentage
+FFX_number_fp_per_house <- FFX_number_fp_per_house %>%
+  mutate(percentage = houses_with_x_fps/houses_built)
+  
 
   
  
